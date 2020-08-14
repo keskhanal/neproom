@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'kmvm84jxsnro9mhw^q_))q)!#7kg+icfs*a&i_0ir(9a&c1h7*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['neproom.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -152,3 +152,8 @@ EMAIL_HOST_USER = 'yourtutor2077@gmail.com'
 EMAIL_HOST_PASSWORD = '@imyourtutor2077.'
 EMAIL_USE_TLS = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
